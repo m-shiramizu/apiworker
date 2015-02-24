@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'magellan-rails', '~> 0.2.2'
+gem 'therubyracer', platforms: :ruby
 
 gem 'rails', '4.2.0'
 

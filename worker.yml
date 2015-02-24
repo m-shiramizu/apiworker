@@ -1,0 +1,9 @@
+migration_command_1: "bundle exec rake db:migrate:reset db:seed"
+migration_command_2: "bundle exec rake db:migrate"
+environment_vars_yaml: |
+  ---
+  SECRET_KEY_BASE: 9eeffbb536a80481f9531919a73599666b4400f0f35bb197fbe15d1a235702035c9217be0b4e04cfc50e91f4609137b335fdf75f4d9fb46617c3471029cd9d2a
+
+  RAILS_ENV: production
+  ENABLE_SKIP_AUTH: true
+  HOST: bl-mem-dev-mqtt.magellanic-clouds.com
