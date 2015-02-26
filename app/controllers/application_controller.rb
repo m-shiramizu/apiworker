@@ -10,11 +10,12 @@ class ApplicationController < ActionController::API
     def check_accesstoken
       strs = request.env['HTTP_AUTHORIZATION'].split(/[[:space:]]/)
       token = strs[1]
-      client = doorkeeper_oauth_client(ENV['DOORKEEPER_APP_ID'],ENV['DOORKEEPER_APP_SECRET'],ENV['DOORKEEPER_APP_URL'])
+
+      client = doorkeeper_oauth_client(nil,nil,ENV['DOORKEEPER_APP_PROVIDER_URL'])
 
       accesstoken = OAuth2::AccessToken.new(client,token )
       infomation = accesstoken.get('/api/v1/me.json').parsed
-
+p infomation
       if infomation.blank?
         render json: { status: 'error'}
       end
